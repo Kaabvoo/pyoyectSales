@@ -12,6 +12,7 @@ const port = 5000;
 // routes
 const productRouter = require('./routes/productRouter');
 const userRouter = require('./routes/userRouter');
+const shopRouter = require('./routes/storeRouter');
 
 // configure mongo to use Promises
 mongoose.Promise = Promise;
@@ -23,8 +24,9 @@ mongoose.connect('mongodb://127.0.0.1:27017/Produccion', {
 .then(() => {
   console.log('Connected to MongoDB'); //connection Acoplished
 
-  app.use('/products', productRouter);
-  app.use('/user', userRouter);
+  app.use('/api/products', productRouter);
+  app.use('/api/user', userRouter);
+  app.use('/api/shop', shopRouter);
 
   // start application
   app.listen(port, () => {

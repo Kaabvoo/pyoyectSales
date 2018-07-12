@@ -1,13 +1,13 @@
-const store = require('../models/store');
+const store = require('../models/Store');
 
 const exporters = {
-    createUser(req, res){
+    createStore(req, res){
         store.create(req.data)
         .then((dat)=>{
             res.status(201).send(dat.toJSON())
         })
     },
-    findUser(req, res){
+    findStore(req, res){
         store.find()
         .then((dat)=>{
             res.status(200).json(dat);
