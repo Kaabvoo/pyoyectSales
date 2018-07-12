@@ -2,15 +2,12 @@ const user = require('../models/User');
 
 const exporters = {
     createUser(req, res){
-        res.send(man)
         user.create(req.data)
         .then((dat)=>{
             console.log(dat)
-            res.status(201).send(dat.toJSON())
+            res.status(201).send(dat.toString('utf-8'))
         })
-        .catch(err=>{
-            console.log(err)
-        })
+        .catch((err)=>{console.log(err)})
     },
     findUser(req, res){
         user.find()

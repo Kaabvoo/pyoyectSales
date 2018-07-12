@@ -4,7 +4,7 @@ const exporters = {
     createStore(req, res){
         store.create(req.data)
         .then((dat)=>{
-            res.status(201).send(dat.toJSON())
+            res.status(201).send(dat)
         })
     },
     findStore(req, res){

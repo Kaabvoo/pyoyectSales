@@ -3,7 +3,7 @@ const Product = require('../models/Product');
 const controll = {
     createProduct(req, res){
         Product.create(req.body).then(newProduct => (
-        res.status(201).json(newProduct.toJSON())
+            res.status(201).send(newProduct)
         ));
     },
     findProduct(req, res){
