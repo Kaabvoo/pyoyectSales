@@ -1,10 +1,10 @@
 const express = require('express');
 const urls = express.Router();
 //controllers
-const controll = require('../controllers/userController')
+const controll = require('../controllers/storeController')
 
 urls.route('/')
-    .post(controll.createUser)
-    .get(controll.findUser)
+    .post(controll.createStore)
+    .get(controll.findStore)
 
 module.exports = urls;
